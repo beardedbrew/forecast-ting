@@ -1,0 +1,148 @@
+/*!
+ * Bootstrap v2.3.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// Core variables and mixins
+@import "variables"; // Modify this for custom colors, font-sizes, etc
+@import "mixins";
+
+// CSS Reset
+@import "reset";
+
+// Grid system and page structure
+@import "scaffolding";
+@import "grid";
+@import "layouts";
+
+// Base CSS
+@import "type";
+@import "code";
+@import "forms";
+@import "tables";
+
+// Components: common
+@import "sprites";
+@import "dropdowns";
+@import "wells";
+@import "component-animations";
+@import "close";
+
+// Components: Buttons & Alerts
+@import "buttons";
+@import "button-groups";
+@import "alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "navs";
+@import "navbar";
+@import "breadcrumbs";
+@import "pagination";
+@import "pager";
+
+// Components: Popovers
+@import "modals";
+@import "tooltip";
+@import "popovers";
+
+// Components: Misc
+@import "thumbnails";
+@import "media";
+@import "labels-badges";
+@import "progress-bars";
+@import "accordion";
+@import "carousel";
+@import "hero-unit";
+
+// Utility classes
+@import "utilities"; // Has to be last to override when necessary
+
+/*
+
+font-family:'Proxima N W01 Light';
+font-family:'Proxima N W01 Reg';
+font-family:'Proxima N W01 Xbold';
+font-family:'Proxima N W01 Bold';
+*/
+
+.container {
+  margin-top:30px;
+}
+
+body.partly-cloudy-day {
+  background:#254047;
+  .now-temp, span.temp {
+    color:#b0e1e2;
+  }
+}
+
+body.rain {
+  background: -webkit-linear-gradient(#004f80 0%, #0070cf 100%);
+  color:#74beed;
+}
+
+.forecast {
+  ul {
+  margin:0 0 40px 0;
+  padding:0;
+    li {
+      list-style-type: none;
+      margin:0;
+      padding:0;
+      display: inline-block;
+      margin-right:20px;
+    }
+  }
+}
+
+h1,h2 {
+  font-family:'Proxima N W01 Xbold';
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+h2 {
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family:'Proxima N W01 Light';
+}
+
+h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  line-height: 1;
+  font-family:'Proxima N W01 Light';
+  font-weight: normal;
+}
+
+span.temp {
+  font-family:'Proxima N W01 Reg';
+  font-size: 40px;
+  display: block;
+  margin: 10px 0 20px 0 ;
+  font-weight: normal;
+  
+}
+
+.now-temp {
+  font-family:'Proxima N W01 Light';
+  font-weight: normal;
+  font-size: 120px;
+  margin:20px 0 35px 0;
+  text-align: right;
+  display: block;
+}
+
+.weather-icon {
+  margin-top: -40px;
+}
