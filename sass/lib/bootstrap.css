@@ -4859,6 +4859,9 @@ body.partly-cloudy-day {
   body.partly-cloudy-day .now-temp, body.partly-cloudy-day span.temp {
     color: #b0e1e2; }
 
+body.partly-cloudy-night {
+  background: #170426; }
+
 body.wind {
   background: #533b3b; }
 
