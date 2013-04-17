@@ -9,7 +9,7 @@
 </head>
 
 <?php
-date_default_timezone_set("UTC");
+date_default_timezone_set('Europe/London');
 include('lib/forecast.io.php');
 $api_key = '7267fbb7a0735a88147f0db5ea3ecfbc';
 $latitude = '52.0700';
