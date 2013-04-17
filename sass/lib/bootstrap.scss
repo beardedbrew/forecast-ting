@@ -121,7 +121,7 @@ body.clear-day {
       margin:0;
       padding:0;
       display: inline-block;
-      margin-right:20px;
+      margin-right:15px;
     }
   }
 }
@@ -171,4 +171,8 @@ span.temp {
 
 .weather-icon {
   margin-top: -40px;
+}
+
+.ui-loader {
+  display: none;
 }

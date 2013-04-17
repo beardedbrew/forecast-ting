@@ -2,11 +2,36 @@
 <html>
 <head>
   <title>Ipswich Weather</title>
+  
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+        <script src="scripts/pull-to-refresh.min.js"></script>
+        <script>
+            function callbackFunction() {
+                // After one second (to simulate loading of external resources), append a list item, refresh the listview and hide pullToRefresh
+                setTimeout(location.reload(true), 1000);
+            }
+
+            $(function() {
+                $('#weather').pullToRefresh({
+                    'callback': callbackFunction,
+                    'height': 50
+                });
+            });
+        </script>
+
   <link rel="stylesheet" type="text/css" href="sass/lib/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="sass/lib/responsive.css">
+  
+  
   <script type="text/javascript" src="http://fast.fonts.com/jsapi/50f59b9e-5b5e-4fc0-8af5-c75b6ffc57bd.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
 </head>
+
+
 
 <?php
 date_default_timezone_set('Europe/London');
@@ -17,10 +42,12 @@ $longitude = '1.1400';
 $forecast = new ForecastIO($api_key);
 ?>
 
+
+
 <?php $condition = $forecast->getCurrentConditions($latitude, $longitude); ?>
 <body class="<?php echo $condition->geticon();?>">
 
-<div class="container">
+<div id="weather" class="container">
   <div class="row">
     <div class="span12">
       <h2>Ipswich Weather</h2>
