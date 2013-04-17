@@ -90,6 +90,10 @@ $forecast = new ForecastIO($api_key);
       </ul>
     </div>
   </div>
+  <hr>
+  <p><small>Powered by <strong>Forecast.io</strong><br>Thundered together by Sketchybear<br>Climacons by Adam Whitcroft</small></p>
+
+  
 </div>
 
 </body>
