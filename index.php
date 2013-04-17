@@ -40,8 +40,10 @@ $forecast = new ForecastIO($api_key);
       <ul>
         <?php foreach($conditions_today as $cond) 
         {
-          echo '<li><img style="display:block; width:50px;" src='. $cond->geticon() . '.svg>';
-          echo '<h4>' . $cond->getTime('H i') . '</h4><span class="temp">' . round($cond->getTemperature()) . '</span></li>' ; 
+          if($cond->getTime() > time()) {
+            echo '<li><img style="display:block; width:50px;" src='. $cond->geticon() . '.svg>';
+            echo '<h4>' . $cond->getTime('H i') . '</h4><span class="temp">' . round($cond->getTemperature()) . '</span></li>' ; 
+          }
         }
         ?>
       </ul>
