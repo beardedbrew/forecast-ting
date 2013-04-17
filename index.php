@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ipswich Weather</title>
-  
+  <title>Ipswich</title>
+  <link rel="apple-touch-icon-precomposed" href="lib/ios.png"/>
+  <link rel="apple-touch-startup-image" href="lib/splash.png" />  
   <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
         <script src="scripts/pull-to-refresh.min.js"></script>
