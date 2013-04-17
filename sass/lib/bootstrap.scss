@@ -81,9 +81,29 @@ body.partly-cloudy-day {
   }
 }
 
+body.partly-cloudy-night {
+	background: #170426;
+}
+
+body.wind {
+	background: #533b3b;
+}
+
 body.rain {
   background: -webkit-linear-gradient(#004f80 0%, #0070cf 100%);
-  color:#74beed;
+  
+    .now-temp, span.temp {
+    color:#74beed;
+  }
+
+}
+
+body.clear-night {
+	background:#37183b;
+	.now-temp, span.temp {
+    color:#bf6bca;
+  }
+	
 }
 
 .forecast {
