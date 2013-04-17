@@ -12,7 +12,7 @@
 include('lib/forecast.io.php');
 $api_key = '7267fbb7a0735a88147f0db5ea3ecfbc';
 $latitude = '52.0700';
-$longitude = '31.1400';
+$longitude = '1.1400';
 $forecast = new ForecastIO($api_key);
 ?>
 
