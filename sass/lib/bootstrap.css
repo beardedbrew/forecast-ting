@@ -4932,3 +4932,16 @@ span.temp {
 
 .ui-loader {
   display: none; }
+
+.weather-block {
+  animation-name: slide-down;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out; }
+
+@keyframes slide-down {
+  from {
+    top: 20px; }
+
+  to {
+    top: 100px; } }

@@ -23,7 +23,7 @@
 
   <link rel="stylesheet" type="text/css" href="sass/lib/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="sass/lib/responsive.css">
-  
+  <script type="text/javascript" src="lib/iOS.js"></script>
   
   <script type="text/javascript" src="http://fast.fonts.com/jsapi/50f59b9e-5b5e-4fc0-8af5-c75b6ffc57bd.js"></script>
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,7 +50,7 @@ $forecast = new ForecastIO($api_key);
 
 <div id="weather" class="container">
   <div class="row">
-    <div class="span12">
+    <div class="span12 weather-block">
       <h2>Ipswich Weather</h2>
     </div>
     <hr>
