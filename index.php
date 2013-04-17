@@ -9,6 +9,7 @@
 </head>
 
 <?php
+date_default_timezone_set("UTC");
 include('lib/forecast.io.php');
 $api_key = '7267fbb7a0735a88147f0db5ea3ecfbc';
 $latitude = '52.0700';
@@ -40,10 +41,8 @@ $forecast = new ForecastIO($api_key);
       <ul>
         <?php foreach($conditions_today as $cond) 
         {
-          if($cond->getTime() > time()) {
-            echo '<li><img style="display:block; width:50px;" src='. $cond->geticon() . '.svg>';
-            echo '<h4>' . $cond->getTime('H i') . '</h4><span class="temp">' . round($cond->getTemperature()) . '</span></li>' ; 
-          }
+          echo '<li><img style="display:block; width:50px;" src='. $cond->geticon() . '.svg>';
+          echo '<h4>' . $cond->getTime('H i') . '</h4><span class="temp">' . round($cond->getTemperature()) . '</span></li>' ; 
         }
         ?>
       </ul>
