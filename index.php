@@ -90,8 +90,11 @@ $forecast = new ForecastIO($api_key);
       </ul>
     </div>
   </div>
-  <hr>
-  <p><small>Please support this app by tapping an ad.</small></p>
+  <hr class="visible-phone">
+  <p class="visible-phone"><small>Please support this app by tapping an ad.</small></p>
+</div>
+
+<div class="ads" style="margin-left:-20px;">
   <?php
 
 $GLOBALS['google']['client']='ca-mb-pub-7222067173487624';
@@ -200,6 +203,9 @@ if ($google_ad_handle) {
 }
 
 ?>
+</div>
+<div class="container">
+
   <hr>
   <p><small>Powered by <strong>Forecast.io</strong><br>Thundered together by Sketchybear<br>Climacons by Adam Whitcroft</small></p>
   

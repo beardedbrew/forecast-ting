@@ -69,17 +69,26 @@ font-family:'Proxima N W01 Xbold';
 font-family:'Proxima N W01 Bold';
 */
 
+$snow : #a59e9a;
+$rain : #44a6cb;
+$partly-cloudy-day : #26a97d;
+$partly-cloudy-night : #2c3d3b;
+$clear-day : #fe5e5e;
+$clear-night : #4f7399;
+$sleet : #d0c7c2;
+$wind : #564070;
+$fog : #666;
+$cloudy : #4f7399;
+
+
 .container {
   margin-top:10px;
 }
 
 body.partly-cloudy-day {
-  background:#58838d;
-  .now-temp, span.temp {
-    color:#b5dbdc;
-  }
+  background:$partly-cloudy-day;
   #pull-to-refresh {
-    background: darken(#58838d,20%);
+    background: darken($partly-cloudy-day,20%);
     margin-left:-20px;
     margin-right: -20px;
     span {
@@ -89,12 +98,10 @@ body.partly-cloudy-day {
 }
 
 body.partly-cloudy-night {
-	background: #6e5880;
-.now-temp, span.temp {
-    color:#977bae;
-  }
+	background: $partly-cloudy-night;
+
   #pull-to-refresh {
-    background: darken(#6e5880,20%);
+    background: darken($partly-cloudy-night,20%);
     margin-left:-20px;
     margin-right: -20px;
     span {
@@ -104,36 +111,81 @@ body.partly-cloudy-night {
 }
 
 body.cloudy {
-  background: -webkit-linear-gradient(#818181 0%, #c6c6c6 100%);
+  background: $cloudy;
+  #pull-to-refresh {
+    background: darken($cloudy,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
+  }
 }
 
 body.wind {
-	background: #533b3b;
+	background: $wind;
+	#pull-to-refresh {
+    background: darken($wind,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
+  }
+}
+
+body.snow {
+	background: $snow;
+	#pull-to-refresh {
+    background: darken($snow,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
+  }
+}
+
+body.sleet {
+	background: $sleet;
+	#pull-to-refresh {
+    background: darken($sleet,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
+  }
 }
 
 body.rain {
-  background: -webkit-linear-gradient(#607d8b 0%, #5a738f 100%);
-    .now-temp, span.temp {
-    color:#b6d5e6;
+  background: $rain;
+  #pull-to-refresh {
+    background: darken($rain,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
   }
-
 }
 
 body.clear-night {
-	background:#37183b;
-	.now-temp, span.temp {
-    color:#bf6bca;
+	background: $clear-night;
+	#pull-to-refresh {
+    background: darken($clear-night,20%);
+    margin-left:-20px;
+    margin-right: -20px;
+    span {
+      margin-left: 20px;
+    }
   }
-	
 }
 
 body.clear-day {
-  background: #ffab00;
-  .now-temp, span.temp {
-    color:#fff;
-  }
+  background: $clear-day;
   #pull-to-refresh {
-    background: darken(#ffab00,20%);
+    background: darken($clear-day,20%);
     margin-left:-20px;
     margin-right: -20px;
     span {
