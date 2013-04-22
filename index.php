@@ -5,21 +5,48 @@
   <link rel="apple-touch-icon-precomposed" href="lib/ios.png"/>
   <link rel="apple-touch-startup-image" href="lib/splash.png" />  
   <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-        <script src="scripts/pull-to-refresh.min.js"></script>
-        <script>
-            function callbackFunction() {
-                // After one second (to simulate loading of external resources), append a list item, refresh the listview and hide pullToRefresh
-                setTimeout(location.reload(true), 1000);
-            }
+  <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+  <script src="scripts/pull-to-refresh.min.js"></script>
+  <script>
+      function callbackFunction() {
+          // After one second (to simulate loading of external resources), append a list item, refresh the listview and hide pullToRefresh
+          setTimeout(location.reload(true), 1000);
+      }
 
-            $(function() {
-                $('#weather').pullToRefresh({
-                    'callback': callbackFunction,
-                    'height': 50
-                });
-            });
-        </script>
+      $(function() {
+          $('#weather').pullToRefresh({
+              'callback': callbackFunction,
+              'height': 50
+          });
+      });
+  </script>
+  
+  <script>  
+        jQuery(window).ready(function(){  
+            jQuery("#weather").click(initiate_geolocation);  
+        });  
+        function initiate_geolocation() {  
+            navigator.geolocation.getCurrentPosition(handle_geolocation_query,handle_errors);  
+        }  
+        function handle_errors(error)  
+        {  
+            switch(error.code)  
+            {  
+                case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+                break;  
+                case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+                break;  
+                case error.TIMEOUT: alert("retrieving position timed out");  
+                break;  
+                default: alert("unknown error");  
+                break;  
+            }
+        }  
+        function handle_geolocation_query(position){  
+            alert('Lat: ' + position.coords.latitude +  
+                  ' Lon: ' + position.coords.longitude);  
+        }
+  </script> 
 
   <link rel="stylesheet" type="text/css" href="sass/lib/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="sass/lib/responsive.css">
@@ -29,10 +56,9 @@
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /><meta name="apple-mobile-web-app-capable" content="yes" />
   <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-
 </head>
 
-
+<!-- Add a get function to pass the co-ords in to a URL string -->
 
 <?php
 date_default_timezone_set('Europe/London');
@@ -54,6 +80,7 @@ $forecast = new ForecastIO($api_key);
       <h2>Ipswich Weather</h2>
     </div>
     <hr>
+    
     <div class="span6" style="position:relative;">
       <h1>Now</h1>
       <?php $condition = $forecast->getCurrentConditions($latitude, $longitude); ?>
